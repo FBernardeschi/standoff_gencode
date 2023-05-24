@@ -1,0 +1,180 @@
+@font-face {
+	font-family: 'Eurostile'; 
+	src: local('Eurostile'),
+		url('../fonts/Eurostile-Reg.ttf'); 
+}
+
+@font-face {
+	font-family: 'Eurostile Bold'; 
+	src: local('Eurostile Bold'),
+		url('../fonts/Eurostile-Bol.ttf'); 
+}
+
+@font-face {
+	font-family: 'Eurostile Medium'; 
+	src: local('Eurostile Bold'),
+		url('../fonts/Eurostile-Med.ttf'); 
+}
+
+:root {
+    --background-color: #485E73;
+}
+
+* {
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 85%;
+    font-family: "Eurostile", sans-serif;
+    background-color: var(--background-color);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    transition: color .3s;
+    color: #E4E3E3;
+}
+
+.nav-bar a:hover {
+    transition: color .3s;
+    color: #C93322;
+}
+
+p, h1, h2, h3, h4 {
+    margin: 0;padding: 0;
+    letter-spacing: 1px;
+}
+
+section {
+    padding: 1rem 9%;
+}
+
+/* header */
+
+.nav-bar {
+    padding: 1rem 9%;
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.icon-toggler {
+    display: none;
+}
+
+a.logo img {
+    height: 32px;
+    width: 70px;
+}
+
+.nav a {
+    margin-left: 2rem;
+    font-size: 1.1rem;
+}
+
+/* main */
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background: url('../img/fon.jpg') left no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-main {
+    width: 45%;
+}
+
+.logo-app img {
+    margin: 4rem -7% 2rem;
+    width: 114%;
+}
+
+.main h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0 -5%;
+    color: white;
+}
+
+.btn {
+    margin: 2rem .5rem;
+    padding: 0.7rem 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+}
+
+.btn:nth-child(2) {
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.btn:nth-child(2):hover {
+    transition: background .3s;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* adaptiv */
+
+@media (max-width: 991px) {
+    .block-main {
+        width: 55%;
+    }
+    
+    .main h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 776px) {
+    .logo-app h1 {
+        font-size: 1.2rem;
+    }
+
+    .block-main {
+        width: 63%;
+    }
+    
+    .main h1 {
+        font-size: 1.1rem;
+    }
+
+    .block-btn .btn {
+        font-size: .8rem;
+    } 
+}
+
+@media (max-width: 545px) {
+    .logo-app h1 {
+        font-size: .9rem;
+    }
+
+    .block-main {
+        width: 70%;
+    }
+
+    .block-btn .btn {
+        font-size: .45rem;
+        letter-spacing: 2px;
+    } 
+}
