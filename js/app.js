@@ -14,3 +14,25 @@ function randCode() {
     
     code.innerHTML = res;    
 }
+
+// scroll
+
+let login = document.querySelector('.loginA');
+let reg = document.querySelector('.regA');
+let gen = document.querySelector('.genA');
+let mainList = document.querySelector('.main-list');
+
+login.addEventListener('click', function() {
+    mainList.classList.add('active-login');
+    mainList.classList.remove('active-reg');
+});
+
+reg.addEventListener('click', function() {
+    mainList.classList.add('active-reg');
+    mainList.classList.remove('active-login');
+})
+
+gen.addEventListener('click', function() {
+    mainList.classList.remove('active-reg');
+    mainList.classList.remove('active-login');
+})

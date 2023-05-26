@@ -18,6 +18,7 @@
 
 :root {
     --background-color: #485E73;
+    --font-color: #E4E3E3;
 }
 
 * {
@@ -35,7 +36,7 @@ body {
 a {
     text-decoration: none;
     transition: color .3s;
-    color: #E4E3E3;
+    color: var(--font-color);
 }
 
 .nav-bar a:hover {
@@ -55,7 +56,7 @@ section {
 /* header */
 
 .nav-bar {
-    padding: 1rem 9%;
+    padding: .7rem 9%;
     position: fixed;
     top: 0;left: 0;
     width: 100%;
@@ -84,7 +85,7 @@ a.logo img {
 
 .main {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url('../img/fon.jpg') left no-repeat;
     background-size: cover;
     display: flex;
@@ -93,12 +94,14 @@ a.logo img {
 }
 
 .block-main {
+    height: 100%;
     width: 45%;
 }
 
 .logo-app img {
-    margin: 4rem -7% 2rem;
-    width: 114%;
+    margin: 3rem -3% 2rem;
+    width: 106%;
+    height: 60px;
 }
 
 .main h1 {
@@ -111,14 +114,14 @@ a.logo img {
 }
 
 .btn {
-    margin: 2rem .5rem;
+    margin: 2rem 0;
     padding: 0.7rem 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     text-transform: uppercase;
-    font-size: 1.15rem;
+    font-size: .9rem;
     text-align: center;
     font-weight: 600;
     color: white;
@@ -133,6 +136,179 @@ a.logo img {
     transition: background .3s;
     background: rgba(255, 255, 255, 0.4);
 }
+
+/* .login, .reg { */
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 15px;
+    height: 400px;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    /* box-shadow: 0 0 30px rgba(255, 255, 255, 0.35); */
+    border-radius: 20px;
+    backdrop-filter: blur(60px);
+    transition: left .1s, height .3s;
+}
+
+.login, .reg {
+    padding: 35px 15px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.login h2, .reg h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border-bottom: 2px solid var(--font-color);
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 35px 0 0;
+    background: transparent;
+    outline: none;
+    border: none;
+    caret-color: var(--font-color);
+    color: var(--font-color);
+}
+
+.input-box label {
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    transition: .3s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -15px;
+}
+
+.remember-forgot {
+    display: flex;
+    margin: -10px 0 20px 0;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+input[type=checkbox] {
+    accent-color: var(--background-color);
+    margin-right: 5px;
+}
+
+.form-btn {
+    width: 100%;
+    height: 35px;
+    background-color: var(background-color);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.login-registr {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 15px 0 10px;
+}
+
+.login-registr p a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-registr p a:hover {
+    text-decoration: underline;
+}
+
+
+.codgen {
+    transition: transform .3s;
+    padding: 0 15px;
+}
+
+/* list */
+
+.main-list {
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    color: #E4E3E3;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;right: 0;
+    width: 40px;height: 40px;
+    background-color: var(--font-color);
+    border-bottom-left-radius: 20px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+/* slider */
+
+.main-list.active-login .codgen {
+    transition: transform .3s;
+    transform: translateX(-100%);
+}
+
+.main-list.active-reg .codgen {
+    transition: transform .3s;
+    transform: translateX(-100%);
+}
+
+.main-list.active-login .wrapper {
+    transition: left .3s, height .3s;
+    left: 0;
+    height: 370px;
+    /* box-shadow: 0 0 30px rgba(255, 255, 255, 0.35); */
+}
+
+.main-list.active-reg .wrapper {
+    transition: left .3s, height .3s;
+    left: 0;
+    /* box-shadow: 0 0 30px rgba(255, 255, 255, 0.35); */
+}
+
+.main-list.active-login .login {
+    transition: left .3s;
+    left: 0;
+}
+
+.main-list.active-reg .reg {
+    transition: .3s;
+    left: 0;
+}
+
 
 /* adaptiv */
 
