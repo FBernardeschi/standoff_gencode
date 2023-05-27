@@ -155,7 +155,6 @@ a.logo img {
     justify-content: center;
     align-items: center;
     padding: 35px 10px;
-    margin: 0 1px;
     height: 400px;
     overflow: hidden;
     background: transparent;
@@ -177,6 +176,13 @@ a.logo img {
 .login h2, .reg h2 {
     text-align: center;
     font-size: 2rem;
+}
+
+.block-input>p {
+    text-align: center;
+    color: #E84633;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 .input-box {
@@ -232,9 +238,13 @@ input[type=checkbox] {
 }
 
 .form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 35px;
-    background-color: var(background-color);
+    color: var(--background-color);
+    background-color: var(--font-color);
     border-radius: 6px;
     border: none;
     outline: none;
@@ -380,7 +390,7 @@ input[type=checkbox] {
     }
 
     .codgen {
-        padding: 0 10px;
+        padding: 0 15px;
     }
 
     .logo-app h1 {
