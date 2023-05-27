@@ -58,6 +58,7 @@ section {
 .nav-bar {
     padding: .7rem 9%;
     position: fixed;
+    z-index: 1;
     top: 0;left: 0;
     width: 100%;
     box-sizing: border-box;
@@ -69,11 +70,17 @@ section {
 
 .icon-toggler {
     display: none;
+    width: 32px;
+    height: 32px;
 }
 
 a.logo img {
     height: 32px;
     width: 70px;
+}
+
+.nav {
+    z-index: 2;
 }
 
 .nav a {
@@ -84,6 +91,7 @@ a.logo img {
 /* main */
 
 .main {
+    position: relative;
     width: 100%;
     min-height: 100vh;
     background: url('../img/fon.jpg') left no-repeat;
@@ -146,7 +154,8 @@ a.logo img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 35px 15px;
+    padding: 35px 10px;
+    margin: 0 1px;
     height: 400px;
     overflow: hidden;
     background: transparent;
@@ -323,6 +332,10 @@ input[type=checkbox] {
 }
 
 @media (max-width: 776px) {
+    .nav a {
+        margin-left: 1rem;
+    }
+    
     .logo-app h1 {
         font-size: 1.2rem;
     }
@@ -341,6 +354,35 @@ input[type=checkbox] {
 }
 
 @media (max-width: 545px) {
+    .icon-toggler {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        border-top: 1px solid #000;
+        transition: left .3s;
+    }
+
+    .nav.nav-active {
+        left: 0;
+        transition: .3s;
+    }
+
+    .nav a {
+        display: block;
+        margin: .8rem 0 .8rem 9%;
+        
+    }
+
+    .codgen {
+        padding: 0 10px;
+    }
+
     .logo-app h1 {
         font-size: .9rem;
     }
@@ -350,7 +392,7 @@ input[type=checkbox] {
     }
 
     .block-btn .btn {
-        font-size: .45rem;
+        font-size: .55rem;
         letter-spacing: 2px;
     } 
 }
